@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { App }  from './pages/dashboard/App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./assets/styles/theme";
+ 
+const AppComponent = () => {
+	return (
+	  <ThemeProvider theme={lightTheme}>
+		<App />
+	  </ThemeProvider>
+	);
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppComponent />
   </React.StrictMode>,
   document.getElementById('root')
 );
