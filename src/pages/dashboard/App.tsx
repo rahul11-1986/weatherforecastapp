@@ -1,7 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import './App.css';
 import styled from 'styled-components';
 import { Button } from '../../ui/button/button';
+import { ForecastSummaryList } from './ForecastSummaryList';
+import { ForecastContext } from '../../store/ForecastContext';
 import { ForecastService } from '../../services/forecast/forecast.service';
 
 const Container = styled.div`
@@ -19,6 +21,7 @@ const SearchPanel = styled.div`
 
 export const App = () => {
 
+	const { storeForecastList } = useContext(ForecastContext);
 	const searchCityTextField = useRef<HTMLInputElement>(null);
 
 	/**
@@ -26,7 +29,7 @@ export const App = () => {
 	 */
 	const onSearchButtonClick = async () => {
 		const result = await ForecastService.getWeeklyForecastByCity(searchCityTextField.current.value);
-		console.log(result);
+		storeForecastList(result);
 	}
 
 	return (
@@ -36,20 +39,7 @@ export const App = () => {
 					<input className='search-input' type="search" ref={searchCityTextField} placeholder="Search city" required/>
 					<Button type="button" onClick={onSearchButtonClick}>Search</Button>
 				</SearchPanel>
-				{
-					/* {
-					!hasRecords  ? 
-					(
-						<Error>No record found.</Error>
-					) : 
-					(
-						<div className="layout">
-							<Picker {...this.state} />
-							<ForecastList list={forecast} click={this.showCurrentTemperature} />
-							</div>
-						)
-					} */
-				}
+				<ForecastSummaryList />
 			</Container>
 		</div>
 	)

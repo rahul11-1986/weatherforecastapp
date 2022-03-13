@@ -5,11 +5,14 @@ import { App }  from './pages/dashboard/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./assets/styles/theme";
+import { ForecastProvider } from './store/ForecastContext';
  
 const AppComponent = () => {
 	return (
 	  <ThemeProvider theme={lightTheme}>
-		<App />
+			<ForecastProvider>
+				<App />
+			</ForecastProvider>
 	  </ThemeProvider>
 	);
 };

@@ -1,16 +1,17 @@
 export interface WeeklyForecastDtls {
+	dt_txt: Date;
 	main: WeatherInfo;
-	weather: IconInfo;
+	weather: IconInfo[];
 	wind: WindInfo;
 }
 
 interface WeatherInfo {
-	temp: string;
-	temp_max: string;
-	temp_min: string;
-	humidity: string;
-	pressure: string;
-	sea_level: string;
+	temp: number;
+	temp_max: number;
+	temp_min: number;
+	humidity: number;
+	pressure: number;
+	sea_level: number;
 }
 
 interface IconInfo {
