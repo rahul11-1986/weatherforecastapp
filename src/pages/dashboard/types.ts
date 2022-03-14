@@ -1,14 +1,12 @@
-
 export interface TextSpanProps {
 	size: number;
 	margin?: number;
 	shadow?: boolean;
 }
-
 export interface WeatherForecastInfo {
 	max: number;
 	min: number;
-	current: string;
+	currentTemperature: string;
 	date: Date;
 	day: number;
 	icon: string;

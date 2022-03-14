@@ -1,10 +1,6 @@
 import React, { FC, useState, createContext } from 'react';
-import { WeeklyForecastDtls } from '../services/forecast/forecast.types';
-
-interface ForecastContextType {
-	weeklyForecastList: WeeklyForecastDtls[];
-	storeForecastList?: (list: WeeklyForecastDtls[]) => void;
-}
+import { ForecastContextType } from './types';
+import { WeeklyForecastDtls } from '../../services/forecast/forecast.types';
 
 export const ForecastContext = createContext<ForecastContextType>({
 	weeklyForecastList: []

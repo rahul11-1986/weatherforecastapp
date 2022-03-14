@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { App }  from './pages/dashboard/App';
+import { Dashboard }  from './pages/dashboard';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./assets/styles/theme";
-import { ForecastProvider } from './store/ForecastContext';
+import { lightTheme } from "./assets/styles/theme";
+import { ForecastProvider } from './store/forecast/ForecastContext';
  
 const AppComponent = () => {
 	return (
 	  <ThemeProvider theme={lightTheme}>
 			<ForecastProvider>
-				<App />
+				<Dashboard />
 			</ForecastProvider>
 	  </ThemeProvider>
 	);
