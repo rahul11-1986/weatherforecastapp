@@ -13,9 +13,9 @@ export const WeatherDetails = (props: WeatherForecastInfo) => {
 	const { currentTemperature, humidity, pressure, wind} = props;
 
 	return (
-		<div className="picker">
+		<div  className="picker">
 			<div className="temperature">
-				<TextSpan shadow size={100}>{currentTemperature}</TextSpan>
+				<TextSpan data-testid="temperature" shadow size={100}>{currentTemperature}</TextSpan>
 				<TextSpan shadow margin={17} size={40}>°C</TextSpan>
 			</div>
 			<div className="detail">

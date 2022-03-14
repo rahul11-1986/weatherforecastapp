@@ -34,7 +34,7 @@ export const Dashboard = () => {
 		if (!searchCityTextField.current.value)  return;
 
 		const result = await ForecastService.getWeeklyForecastByCity(searchCityTextField.current.value);
-		
+		console.log('result', result);
 		// Store forecast list in context 
 		storeForecastList(result);
 		setForecastLoadStatus(true);
@@ -46,12 +46,12 @@ export const Dashboard = () => {
 		<div className="main">
 			<Container>
 				<SearchPanel className='search-box'>
-					<input className='search-input' type="search" ref={searchCityTextField} placeholder="Search city" required/>
+					<input data-testid="search-field" className='search-input' type="search" ref={searchCityTextField} placeholder="Search city" required/>
 					<Button type="button" onClick={onSearchButtonClick}>Search</Button>
 				</SearchPanel>
 				{
 					showNoRecordAvailableMessage ? 
-					<div className="error-message">No record found.</div> : 
+					<div data-testid="error-msg-panel" className="error-message">No record found.</div> : 
 					<ForecastPanel />
 				}
 			</Container>
