@@ -1,8 +1,8 @@
 
 ## Motivation
 
-Create an app to search the weather forecast of the city.
-Select the day to display the weather details.
+Create an app to search the weather forecast of the city. \
+Select the day (at the bottom) to view the weather details for that day.
 
 ![image](https://user-images.githubusercontent.com/43812633/158157700-5039ee46-1273-4867-99c9-8c5aa5ee977a.png)
 
